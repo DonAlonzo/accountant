@@ -22,12 +22,14 @@ public class AccountantMain {
 	private Map<String, List<Rule>> recurring = new HashMap<>();
 
 	@SuppressWarnings("resource")
-	public AccountantMain() throws ParseException, IOException {
+	public AccountantMain(String toDate) throws ParseException, IOException {
 		new BufferedReader(new FileReader("data.txt")).lines().forEach(this::process);
 
 		LocalDate from = LocalDate.now();//.plusDays(1);
 		LocalDate to = from.plusMonths(4).minusDays(from.getDayOfMonth());
-		//to = LocalDate.parse("2015-09-04");
+		//to = LocalDate.parse("2017-06-01");
+		if (toDate != null)
+			to = LocalDate.parse(toDate);
 
 		double min = Double.MAX_VALUE;
 		double expenses = 0.0;
@@ -271,7 +273,7 @@ public class AccountantMain {
 
 	public static void main(String[] args) throws IOException {
 		try {
-			new AccountantMain();
+			new AccountantMain(args.length > 0 ? args[0] : null);
 		} catch (FileNotFoundException | ParseException e) {
 			e.printStackTrace();
 		}
