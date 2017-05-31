@@ -26,7 +26,7 @@ public class AccountantMain {
 		new BufferedReader(new FileReader("data.txt")).lines().forEach(this::process);
 
 		LocalDate from = LocalDate.now();//.plusDays(1);
-		LocalDate to = from.plusMonths(4).minusDays(from.getDayOfMonth());
+		LocalDate to = from.plusMonths(7).minusDays(from.getDayOfMonth());
 		//to = LocalDate.parse("2017-06-01");
 		if (toDate != null)
 			to = LocalDate.parse(toDate);
