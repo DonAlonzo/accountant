@@ -15,19 +15,19 @@ public class Ticker {
 			throws IOException {
 		
 		if (from.equalsIgnoreCase("EUR")) {
-			return 9.77;
+			return 10.61;
 		}
 		if (from.equalsIgnoreCase("USD")) {
-			return 8.69;
+			return 9.30;
 		}
 		if (from.equalsIgnoreCase("DKK")) {
-			return 1.28;
+			return 1.42;
 		}
 		if (from.equalsIgnoreCase("SEK")) {
 			return 1;
 		}
 		if (from.equalsIgnoreCase("GBP")) {
-			return 11.06;
+			return 12.16;
 		}
 		
 		String a = from.compareTo(to) < 0 ? from : to;
